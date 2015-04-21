@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Vermont Public Radio{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Helvetica;
+        }
+
+        h2 {
+            font-weight: 600;
+            margin: 15px 0 10px;
+            text-decoration: underline;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        h4 {
+            margin: 0;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        div {
+            margin-bottom: 5px;
+        }
+
+        .calendar-link {
+            margin-top: 10px;
+        }
+
+        #error {
+            width: 100%;
+            margin: 0 auto;
+            padding-top: 7%;
+            font-size: 18px;
+            color: rgb(132, 0, 30);
+        }
+    </style>
+</head>
+<body>
+    <div id="playing-now"></div>
+    <div id="error">
+        <p id="errorText"></p>
+    </div>
+    <script src="{{ url_for('static', filename='js/nowScript.min.js') }}?ver=1.1"></script>
+</body>
+</html>

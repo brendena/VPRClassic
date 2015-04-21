@@ -1,0 +1,63 @@
+<div class="row schedule">
+    <div class="col-xs-12">
+        <h2>Schedule for {{ dateString }}</h2>
+        <p class="click-to-playlist">Click on a program to see its playlist</p>
+    </div>
+
+    <div class="col-sm-6">
+        <h3>Program Starts In AM</h3>
+        {{# each dailySchedule }}
+            {{# if am }}
+                <div class="listing">
+                    <p class="program-time">{{ start }} - {{ end }}</p>
+                    <h4><a href="#{{ id }}">{{ name }}</a></h4>
+                </div>
+            {{/ if }}
+        {{/ each }}
+    </div>
+
+    <div class="col-sm-6">
+        <h3>Program Starts In PM</h3>
+        {{# each dailySchedule }}
+            {{# unless am }}
+                <div class="listing">
+                    <p class="program-time">{{ start }} - {{ end }}</p>
+                    <h4><a href="#{{ id }}">{{ name }}</a></h4>
+                </div>
+            {{/ unless }}
+        {{/ each }}
+    </div>
+</div>
+
+<h2 id="playlist-date">Playlist for {{ dateString }}</h2>
+
+{{# each dailySchedule }}
+    <div id="{{ id }}" class="program">
+        {{# if link }}
+        <h2><a href="{{ link }}">{{ name }}</a></h2>
+        {{ else }}
+        <h2>{{ name }}</h2>
+        {{/ if }}
+        <p class="program-time">{{ start }} - {{ end }}</p>
+        <div class="playlist{{# if future }} future{{/ if }}">
+            {{# if playlist }}
+                {{#each  playlist }}
+                <div class="song">
+                    <p class="start-time">{{ startTime }}</p>
+                    <p class="composer">{{ composerName }}{{# if composerName }}{{# if trackName }} - {{/ if }}{{/ if }}{{ trackName }}</p>
+                    <p class="info">{{# if ensemble }}{{ ensemble }}{{# if conductor }} / {{/ if }}{{/ if }}{{# if conductor }}{{ conductor }}{{/ if }}</p>
+                    {{# each soloists }}
+                    <p class="info">{{ this }}</p>
+                    {{/ each }}
+                    <p class="purchase"><a href="{{ link }}">{{ copyright }} {{ catalogNumber }}</a></p>
+                </div>
+                {{/each}}
+            {{ else }}
+                {{# if future }}
+                {{ else }}
+                    <p>Visit the <a href="{{ link }}">program website</a> for playlist information or to contact the show.</p>
+                {{/ if }}
+            {{/ if }}
+        </div>
+    </div>
+{{/each}}

@@ -1,0 +1,27 @@
+<div id="program">
+    <h2>On Now</h2>
+    <h3>{{ programOnNow.name }}</h3>
+    <p>{{ programOnNow.start }} - {{ programOnNow.end }}</p>
+</div>
+
+{{# if trackOnNow }}
+<div id="song">
+    <h4>Playing Now</h4>
+    <p>{{ trackOnNow.composer }} - {{ trackOnNow.name }} ({{ trackOnNow.start }})</p>
+    <p class="info">{{# if trackOnNow.ensemble }}{{ trackOnNow.ensemble }}{{# if trackOnNow.conductor }} / {{/ if }}{{/ if }}{{# if trackOnNow.conductor }}{{ trackOnNow.conductor }}{{/ if }}</p>
+    {{# each trackOnNow.soloists }}
+    <p>{{ this }}</p>
+    {{/ each }}
+    <p><a href="{{ trackOnNow.link }}" alt="Link to purchase piece" target="_blank">{{ trackOnNow.copyright }} {{ trackOnNow.catalogNumber }}</a></p>
+</div>
+{{ else }}
+<p id="no-playlist">For playlist information {{# if programOnNow.link }}<a href="{{ programOnNow.link }}" target="_blank">contact the host</a>.</p>{{/if}}
+{{/if}}
+
+<div id="up-next">
+    <h2>Up Next</h2>
+    <h3>{{ programUpNext.name }}</h3>
+    <p>{{ programUpNext.start }} - {{ programUpNext.end }}</p>
+</div>
+
+<p class="calendar-link">For something you heard earlier, see the <a href="http://www.vpr.net/apps/composer/playlist-calendar" target="_blank" alt="VPR Classical Playlist calendar">Playlist Calendar</a></p>

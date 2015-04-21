@@ -1,0 +1,204 @@
+@import "bootstrap";
+@import "vpr";
+@import "vpr-svg";
+@import "compass/css3";
+@import "ionicons";
+@import "pikaday";
+@import "site";
+
+html {
+    color: $black;
+    body {
+        padding: 0;
+    }
+}
+
+a {
+    color: $blue;
+}
+
+div.program {
+    position: relative;
+    h2 {
+        margin-bottom: 0;
+        font-size: 32px;
+        @media (max-width: $tablet) {
+            font-size: 22px;
+        }
+        @media (max-width: $phone) {
+            font-size: 18px;
+        }
+    }
+    .program-time {
+        margin: 0 0 15px;
+        color: $gray;
+        line-height: 1.2em;
+        font-size: 18px;
+        font-weight: 500;
+        padding-left: 2px;
+        @media (max-width: $tablet) {
+            font-size: 14px;
+        }
+    }
+    div.playlist {
+        font-size: 18px;
+        @media (max-width: $tablet) {
+            font-size: 14px;
+        }
+        padding-left: 20px;
+        margin-bottom: 40px;
+        margin-left: 2px;
+        border-left: 7px solid lighten($gray, 30%);
+        @media (max-width: $tablet) {
+            border-left: 4px solid lighten($gray, 30%);
+            padding-left: 10px;
+        }
+        div.song {
+            margin: 10px 0;
+            p {
+                font-size: 16px;
+                margin: 0;
+                line-height: 1.3em;
+                @media (max-width: $tablet) {
+                    font-size: 14px;
+                }
+            }
+            .composer {
+                font-weight: 600;
+                font-size: 18px;
+                @media (max-width: $tablet) {
+                    font-size: 16px;
+                }
+            }
+            .start-time {
+                color: $gray;
+            }
+            .info {
+                color: darken($gray, 10%);
+            }
+            .purchase, .start-time {
+                font-size: 15px;
+                @media (max-width: $tablet) {
+                    font-size: 13px;
+                }
+                font-weight: 500;
+            }
+            .purchase {
+                margin-top: 3px;
+            }
+        }
+    }
+    i.icon {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 36px;
+    }
+    &:hover {
+        i.icon {
+            display: block;
+        }
+    }
+}
+
+#playlist-date {
+    margin-bottom: 20px;
+    text-decoration: underline;
+    font-size: 42px;
+    @media (max-width: $tablet) {
+        font-size: 24px;
+    }
+}
+
+
+.schedule {
+    background: lighten($gray, 45%);
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+    &:hover {
+        .click-to-playlist {
+            color: lighten($red, 5%);
+        }
+    }
+    h2 {
+        font-size: 32px;
+        text-decoration: underline;
+        margin-bottom: 0;
+        text-align: center;
+        @media (max-width: $phone) {
+            font-size: 22px;
+        }
+    }
+    .click-to-playlist {
+        text-align: center;
+        @media (max-width: $phone) {
+            margin-bottom: 15px;
+        }
+    }
+    h3 {
+        font-size: 18px;
+        text-decoration: underline;
+    }
+    h4 {
+        margin-top: 0;
+        font-size: 16px;
+    }
+    p {
+        font-size: 12px;
+        color: $gray;
+        font-weight: 500;
+        margin-bottom: 0;
+    }
+}
+
+.control-center {
+    text-align: center;
+    padding: 15px;
+    color: $white;
+    p {
+        font-size: 18px;
+        @media (max-width: $phone) {
+            font-size: 14px;
+        }
+    }
+    background: lighten($blue, 5%);
+    a {
+        color: $white;
+        text-decoration: underline;
+        &:hover {
+            color: lighten($red, 30%);
+        }
+    }
+    .pick {
+        margin-bottom: 10px;
+        @media (max-width: $phone) {
+            margin-bottom: 25px;
+            padding: 10px 0;
+        }
+        #datepicker {
+            display: inline-block;
+            width: 200px;
+            @include border-radius(3px);
+            font-size: 14px;
+            text-align: center;
+            padding: 1px;
+            margin-bottom: 0;
+            color: $gray !important;
+        }
+
+        p.input-help-text {
+            display: inline-block;
+            margin-right: 15px;
+            @media (max-width: $phone) {
+                margin-right: 0;
+                font-size: 24px;
+                line-height: 1.0em;
+                padding: 15px 0;
+            }
+        }
+    }
+}
+
+
