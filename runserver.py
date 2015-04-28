@@ -6,6 +6,9 @@ from main import app
 from upload_s3 import set_metadata
 from flask_frozen import Freezer
 
+#converting to relative os path
+# http://stackoverflow.com/questions/4297450/convert-backward-slash-to-forward-slash-in-python
+
 def directoryInFiles(name):
     manDir = os.path.normpath("\\main\\Build\\")
 
